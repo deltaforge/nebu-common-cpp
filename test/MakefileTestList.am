@@ -1,0 +1,23 @@
+unit_TESTS =  unit/topology/PhysicalRoot.test unit/topology/PhysicalRack.test unit/topology/PhysicalNetworkStore.test unit/topology/PhysicalLocalStore.test unit/topology/PhysicalHost.test unit/topology/PhysicalDataCenter.test unit/XMLUtil.test unit/VirtualMachine.test unit/StringUtil.test unit/NebuClient.test unit/Arguments.test
+factory_TESTS =  factory/topology/PhysicalRootFactory.test factory/topology/PhysicalRackFactory.test factory/topology/PhysicalNetworkStoreFactory.test factory/topology/PhysicalLocalStoreFactory.test factory/topology/PhysicalHostFactory.test factory/topology/PhysicalDataCenterFactory.test factory/VirtualMachineFactory.test
+integration_TESTS =  integration/AppPhysRequest.test
+
+unit_topology_PhysicalRoot_test_SOURCES = unit/topology/testPhysicalRoot.cpp
+unit_topology_PhysicalRack_test_SOURCES = unit/topology/testPhysicalRack.cpp
+unit_topology_PhysicalNetworkStore_test_SOURCES = unit/topology/testPhysicalNetworkStore.cpp
+unit_topology_PhysicalLocalStore_test_SOURCES = unit/topology/testPhysicalLocalStore.cpp
+unit_topology_PhysicalHost_test_SOURCES = unit/topology/testPhysicalHost.cpp
+unit_topology_PhysicalDataCenter_test_SOURCES = unit/topology/testPhysicalDataCenter.cpp
+unit_XMLUtil_test_SOURCES = unit/testXMLUtil.cpp
+unit_VirtualMachine_test_SOURCES = unit/testVirtualMachine.cpp
+unit_StringUtil_test_SOURCES = unit/testStringUtil.cpp
+unit_NebuClient_test_SOURCES = unit/testNebuClient.cpp
+unit_Arguments_test_SOURCES = unit/testArguments.cpp
+factory_topology_PhysicalRootFactory_test_SOURCES = factory/topology/testPhysicalRootFactory.cpp
+factory_topology_PhysicalRackFactory_test_SOURCES = factory/topology/testPhysicalRackFactory.cpp
+factory_topology_PhysicalNetworkStoreFactory_test_SOURCES = factory/topology/testPhysicalNetworkStoreFactory.cpp
+factory_topology_PhysicalLocalStoreFactory_test_SOURCES = factory/topology/testPhysicalLocalStoreFactory.cpp
+factory_topology_PhysicalHostFactory_test_SOURCES = factory/topology/testPhysicalHostFactory.cpp
+factory_topology_PhysicalDataCenterFactory_test_SOURCES = factory/topology/testPhysicalDataCenterFactory.cpp
+factory_VirtualMachineFactory_test_SOURCES = factory/testVirtualMachineFactory.cpp
+integration_AppPhysRequest_test_SOURCES = integration/testAppPhysRequest.cpp

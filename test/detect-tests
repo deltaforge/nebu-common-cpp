@@ -1,0 +1,41 @@
+#!/bin/sh
+
+UNITTESTS=$(find unit -type f -iname "*.cpp")
+FACTORYTESTS=$(find factory -type f -iname "*.cpp")
+INTEGRATIONTESTS=$(find integration -type f -iname "*.cpp")
+ALLTESTS="$UNITTESTS $FACTORYTESTS $INTEGRATIONTESTS"
+
+{
+	# Print unit test listing
+	UNITTEST_EXEC=
+	for t in $UNITTESTS
+	do
+		UNITTEST_EXEC="$UNITTEST_EXEC $(echo "$t" | sed 's/test\(.*\).cpp/\1.test/g')"
+	done
+	echo "unit_TESTS = $UNITTEST_EXEC"
+
+	# Print factory test listing
+	FACTORYTEST_EXEC=
+	for t in $FACTORYTESTS
+	do
+		FACTORYTEST_EXEC="$FACTORYTEST_EXEC $(echo "$t" | sed 's/test\(.*\).cpp/\1.test/g')"
+	done
+	echo "factory_TESTS = $FACTORYTEST_EXEC"
+
+	# Print integration test listing
+	INTEGRATIONTEST_EXEC=
+	for t in $INTEGRATIONTESTS
+	do
+		INTEGRATIONTEST_EXEC="$INTEGRATIONTEST_EXEC $(echo "$t" | sed 's/test\(.*\).cpp/\1.test/g')"
+	done
+	echo "integration_TESTS = $INTEGRATIONTEST_EXEC"
+
+	echo ""
+
+	# Print SOURCES variables for all tests
+	for t in $ALLTESTS
+	do
+		SUBST=$(echo "$t" | sed 's/test\(.*\).cpp/\1_test/g' | sed 's:/:_:g')
+		echo "${SUBST}_SOURCES = $t"
+	done
+} > MakefileTestList.am

@@ -1,0 +1,12 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: libnebu-common
+Description: C++ library for common Nebu functionality
+Version: @VERSION@
+Libs: -L${libdir} -lnebu-common
+Cflags: -I${includedir}
+Requires.private: tinyxml2 >= 2.1.0
+

@@ -1,0 +1,13 @@
+<root id="root">
+  <dataCenter id="dc">
+    <rack id="rack">
+      <host id="3"/>
+      <host id="2">
+        <store id="local"/>
+      </host>
+      <host id="1"/>
+      <store id="x"/>
+      <store id="y"/>
+      </rack>
+  </dataCenter>
+</root>
